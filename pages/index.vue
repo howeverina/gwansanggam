@@ -108,7 +108,7 @@ export default {
                 }
             }
         } catch {
-            if (confirm(rawTitle+' 문서를 생성하시겠습니까?') {
+            if (confirm(rawTitle+' 문서를 생성하시겠습니까?')) {
               location.href = wikiUrl + '/new?d=' + rawTitle
             }
         }
