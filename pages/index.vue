@@ -108,9 +108,7 @@ export default {
                 }
             }
         } catch {
-            if (confirm(rawTitle+' 문서를 생성하시겠습니까?')) {
-              location.href = wikiUrl + '/new?d=' + rawTitle
-            }
+            wikiBody = [['', '', `${rawTitle} 문서가 없습니다. [생성](${wikiUrl}new/?d=${rawTitle})해 주세요.`, '']]
         }
         
         const googleSheetUrl3 = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/`
