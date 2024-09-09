@@ -63,7 +63,7 @@ export default {
       var secretKey = process.env.PRIVATE_KEY.replace(/\\n/gm, '\n')
 
       const token = jwt.sign(
-          { "iss": process.env.clientEmail, "scope": "https://www.googleapis.com/auth/spreadsheets", "aud": "https://oauth2.googleapis.com/token" },
+          { "iss": process.env.CLIENT_EMAIL, "scope": "https://www.googleapis.com/auth/spreadsheets", "aud": "https://oauth2.googleapis.com/token" },
           secretKey,
           { algorithm: 'RS256', expiresIn: "1h", keyid: process.env.PRIVATE_KEY_ID }
       );
