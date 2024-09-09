@@ -108,7 +108,7 @@ export default {
                 }
             }
         } catch {
-            $router.push( wikiUrl + '/new?d=' + rawTitle);
+            location.href = wikiUrl + '/new?d=' + rawTitle
         }
         
         const googleSheetUrl3 = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/`
