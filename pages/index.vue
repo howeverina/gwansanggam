@@ -108,7 +108,7 @@ export default {
                 }
             }
         } catch {
-            wikiBody = [['', '', `${rawTitle} 문서가 없습니다. [생성](${wikiUrl}new/?d=${rawTitle})해 주세요.`, '']]
+            wikiBody = [['', '', `${rawTitle} 문서가 없습니다. [생성](${wikiUrl}/new/?d=${rawTitle})해 주세요.`, '']]
         }
         
         const googleSheetUrl3 = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/`
