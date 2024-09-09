@@ -108,7 +108,9 @@ export default {
                 }
             }
         } catch {
-            location.href = wikiUrl + '/new?d=' + rawTitle
+            if (confirm(rawTitle+' 문서를 생성하시겠습니까?') {
+              location.href = wikiUrl + '/new?d=' + rawTitle
+            }
         }
         
         const googleSheetUrl3 = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/`
