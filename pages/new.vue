@@ -44,14 +44,14 @@ export default {
       ]
     }
   },
-    async asyncData ({ $config: { wikiUrl }, $config: { wikiTitle }, $config: { sheetId }, $config: { privateKey }, $config: { privateKeyId }}) {
+    async asyncData ({ $config: { wikiUrl }, $config: { wikiTitle }, $config: { sheetId }, $config: { clientEmail }, $config: { privateKey }, $config: { privateKeyId }}) {
 
         wikiUrl = 'https://'+wikiUrl
 
         var secretKey = privateKey.replace(/\\n/gm, '\n')
 
         const token = jwt.sign(
-            { "iss": "samplewiki@musictart.iam.gserviceaccount.com", "scope": "https://www.googleapis.com/auth/spreadsheets", "aud": "https://oauth2.googleapis.com/token" },
+            { "iss": clientEmail, "scope": "https://www.googleapis.com/auth/spreadsheets", "aud": "https://oauth2.googleapis.com/token" },
             secretKey,
             { algorithm: 'RS256', expiresIn: "1h", keyid: privateKeyId }
         );
